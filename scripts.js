@@ -9,26 +9,17 @@ function changePlaybackRate(speed) {
 }
 
 function selectSpeedSetting() {
-    let speedSetting = getSettingElement();
-    let index = getIndexOfSettings(speedSetting, "再生速度");
-    speedSetting[index].click();
+    Array.from(getSettingElement()).find(x => x.textContent == "再生速度").click();
 }
 
 function selectSpeed(speed) {
-    let speedSetting = getSettingElement();
-    let index = getIndexOfSettings(speedSetting, speed);
-    speedSetting[index].click();
+    Array.from(getSettingElement()).find(x => x.textContent == speed).click();
     console.info("INFO:  Change playback speed to: " + speed);
 }
 
 function getSettingElement() {
     // this element actually has settings other than ones related to playback rate
     return document.getElementsByClassName("ytp-menuitem-label");
-}
-
-function getIndexOfSettings(settings, text) {
-    let index = Array.from(settings).findIndex(x => x.textContent == text);
-    return index;
 }
 
 window.onload = () => {
