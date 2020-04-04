@@ -1,0 +1,12 @@
+{
+  "name": "youtubeVideoSpeedChanger",
+  "version" : "1.0",
+  "manifest_version" : 2,
+  "description": "google chrome extension that changes youtube playback rate in video player to 1.0 automatically, not using \"document.querySelector('video').playbackRate\" statement",
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/watch*"],
+      "js": ["scripts.js"]
+    }
+  ]
+}
